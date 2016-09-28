@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    @comments = Comment.where(blog_id: @blog).order("created_at DESC")
   end
 
   def create

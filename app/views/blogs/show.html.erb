@@ -1,3 +1,5 @@
+<% content_for :title, @blog.title %>
+
 <!-- Page Content -->
     <div class="container">
 
@@ -21,9 +23,9 @@
 
                 <!-- Date/Time -->
                 <% if @blog.created_at == @blog.updated_at %>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @blog.created_at %></p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted <%= time_ago_in_words(@blog.created_at) %></p>
                 <% else %>
-                <p><span class="glyphicon glyphicon-time"></span> Edited on <%= @blog.updated_at %></p>
+                <p><span class="glyphicon glyphicon-time"></span> Edited <%= time_ago_in_words(@blog.updated_at) %></p>
                 <% end %>
 
                 <hr>
@@ -40,24 +42,30 @@
                     <h4>Leave a Comment:</h4>
                     <form role="form" action="/comments" method="post">
                         <div class="form-group">
-                            <textarea name="content" class="form-control" rows="3"></textarea>
+                            <textarea name="comment[content]" class="form-control" rows="3"></textarea>
                         </div>
                         <input type="hidden" name="blog_id" value="<%= @blog.id %>">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
 
+                <% if @blog.comments.count == 1 %>
+                    <h2><%= @blog.comments.count %> comment</h2>
+                <% elsif @blog.comments.count > 1 %>
+                    <h2><%= @blog.comments.count %> comments</h2>
+                <% end %>    
+
                 <hr>
-                 <% @comments.each do |comment| %>
+                 <% @blog.comments.each do |comment| %>
 
                 <!-- Comment -->
-                <div class="media">
+                <div class="media" style="margin-bottom: 20px">
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading"> Anonymous
-                            <small><%= comment.created_at %></small>
+                            <small><%= time_ago_in_words(comment.created_at) %></small>
                         </h4>
                         <%= comment.content %>
                     </div>
@@ -128,18 +136,6 @@
 
         </div>
         <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
 
     </div>
     <!-- /.container -->
