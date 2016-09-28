@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @comments = Comment.where(blog_id: @blog).order("created_at DESC")
   end
 
   def create
@@ -26,6 +27,6 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-  params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content)
   end
 end
