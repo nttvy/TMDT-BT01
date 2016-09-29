@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all.order("created_at DESC")
+    @blogs = Blog.all.order("created_at DESC").page(params[:page]).per_page(5)
     @blog = Blog.new
   end
 
@@ -41,7 +41,7 @@ class BlogsController < ApplicationController
 
   def search
     @keywords = params.require(:keywords)
-    @blogs = Blog.where("title like ?", "%#{@keywords}%")
+    @blogs = Blog.where("title like ?", "%#{@keywords}%").page(params[:page]).per_page(5)
   end
 
   private

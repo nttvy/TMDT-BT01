@@ -38,12 +38,14 @@ Danh sách chức năng **thêm** đã làm nhưng chưa được liệt kê ở
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận.
 
 Danh sách chức năng **phụ** đã làm nhưng không được liệt kê ở trên:
+* [x] Phân trang cho các blog (5 blog mỗi trang).
 
 Các chuẩn đầu ra cần thực hiện:
 * [ ] Git với Centralize Workflow
 * [ ] Git theo Feature Branch Workflow
 * [ ] Git theo Feature Branch Workflow có Pull Request
 * [ ] Git theo Gitflow Workflow
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:

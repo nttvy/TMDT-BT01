@@ -4,7 +4,7 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Blog Search</h4>
-                    <%= form_tag("/blogs/search", method: "post") do %>
+                    <%= form_tag("/blogs/search/title", method: "get") do %>
                         <div class="input-group">
                             <%= text_field_tag "keywords", nil, class: "form-control", placeholder: "Search blog by title" %>
                             <span class="input-group-btn">
