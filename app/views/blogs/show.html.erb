@@ -80,7 +80,7 @@
                 <% end %>    
 
                 <hr>
-                 <% @blog.comments.each do |comment| %>
+                 <% @blog.comments.order("created_at DESC").each do |comment| %>
 
                     <!-- Comment -->
                     <div class="media" style="margin-bottom: 20px">

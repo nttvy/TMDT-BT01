@@ -39,6 +39,7 @@ Danh sách chức năng **thêm** đã làm nhưng chưa được liệt kê ở
 
 Danh sách chức năng **phụ** đã làm nhưng không được liệt kê ở trên:
 * [x] Phân trang cho các blog (5 blog mỗi trang).
+* [x] Thêm thông báo khi tạo hoặc xóa blog thành công (flash message).
 
 Các chuẩn đầu ra cần thực hiện:
 * [ ] Git với Centralize Workflow

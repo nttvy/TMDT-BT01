@@ -16,6 +16,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.create!(blog_params)
 
+    flash[:success] = "Blog successfully created!"
     redirect_to blogs_url
   end
 
@@ -36,6 +37,8 @@ class BlogsController < ApplicationController
       comment.destroy
     end
     @blog.destroy
+
+    flash[:success] = "Blog successfully deleted!"
     redirect_to blogs_url
   end
 
