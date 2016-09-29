@@ -35,6 +35,11 @@ class BlogsController < ApplicationController
     redirect_to blogs_url
   end
 
+  def search
+    @keywords = params.require(:keywords)
+    @blogs = Blog.where("title like ?", "%#{@keywords}%")
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:title, :content)

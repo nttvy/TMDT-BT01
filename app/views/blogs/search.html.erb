@@ -1,4 +1,4 @@
-    <% content_for :title, "Blog - Home" %>
+    <% content_for :title, "Search result" %>
     
     <!-- Page Content -->
     <div class="container">
@@ -12,19 +12,6 @@
                     Page Heading
                     <small>Secondary Text</small>
                 </h1>
-
-                 <!-- Blog form -->
-                <div class="well" style="min-height:300px">
-                    <h4>Create new entry:</h4>
-                    <%= form_for @blog, url: {action: "create"}, html: {role: "form"} do |f| %>
-                        <div class="form-group">
-                            <%= f.text_field :title, class: "form-control", placeholder: "Enter title", required: true %>
-                            </br>
-                            <%= f.text_area :content, rows: 5, class: "form-control", required: true %>
-                        </div>
-                        <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
-                    <% end %>
-                </div>
 
                 <hr>
 
