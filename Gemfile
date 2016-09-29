@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+#Redcarpet
+gem 'redcarpet'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

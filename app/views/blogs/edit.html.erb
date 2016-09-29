@@ -9,13 +9,13 @@
             <div class="col-md-8">
 
                  <!-- Blog form -->
-                <div class="well" style="min-height:250px">
+                <div class="well" style="min-height:300px">
                     <h4>Edit entry:</h4>
                     <form role="form" action="/blogs/<%= @blog.id %>" method="post">
                         <div class="form-group">
                             <input type="text" name="blog[title]" class="form-control" placeholder="Enter title" value="<%= @blog.title %>">
                             </br>
-                            <textarea name="blog[content]" class="form-control" rows="3"><%= @blog.content %></textarea>
+                            <textarea name="blog[content]" class="form-control" rows="5"><%= @blog.content %></textarea>
                             <input type="hidden" name="_method" value="PUT">
                         </div>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>

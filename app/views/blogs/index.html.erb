@@ -42,7 +42,7 @@
                     <p><span class="glyphicon glyphicon-time"></span> Edited <%= time_ago_in_words(blog.updated_at) %></p>
                     <% end %>
                     <hr>
-                    <p><%= blog.content %></p>
+                    <p><%= markdown(blog.content) %></p>
                     <a class="btn btn-primary" href="/blogs/<%= blog.id %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                     <hr>
