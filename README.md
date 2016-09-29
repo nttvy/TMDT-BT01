@@ -2,8 +2,9 @@
 
 TMDT-BT01 Đây là trang web cho phép người dùng viết blog. Thời gian nộp: 0h ngày 3/10
 
-Danh sách sinh viên: 	Nguyễn Thị Tường Vy - 1352019
-						Lưu Thái Ngọc Thạch - 1352014
+Danh sách sinh viên: 	
+* Nguyễn Thị Tường Vy - 1352019
+* Lưu Thái Ngọc Thạch - 1352014
 
 URL: **Insert your Heroku URL here**
 
