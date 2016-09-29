@@ -18,13 +18,18 @@
                 <% end %>
 
                  <!-- Blog form -->
-                <div class="well" style="min-height:300px">
+                <div class="well" style="min-height:430px">
                     <h4>Create new entry:</h4>
                     <%= form_for @blog, url: {action: "create"}, html: {role: "form"} do |f| %>
                         <div class="form-group">
+                            <%= f.label :title %>
                             <%= f.text_field :title, class: "form-control", placeholder: "Enter title", required: true %>
                             </br>
+                            <%= f.label :content %>
                             <%= f.text_area :content, rows: 5, class: "form-control", required: true %>
+                            </br>
+                            <%= f.label :tag_list, "Tags (separated by commas)" %>
+                            <%= f.text_field :tag_list, class: "form-control", placeholder: "Enter tags" %>
                         </div>
                         <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
                     <% end %>
@@ -47,6 +52,12 @@
                     <% end %>
                     <hr>
                     <p><%= blog.content.lines.first %> </p>
+                    <hr>
+                    <% if blog.tag_list.empty? %>
+                        <p><small> No tag </small></p>
+                    <% else %>
+                        <p><small>Tags: <%= blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe %></small></p>
+                    <% end %>
 
                     <%= link_to blog, class: "btn btn-primary" do %>
                         Read more

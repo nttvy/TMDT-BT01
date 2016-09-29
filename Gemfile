@@ -22,6 +22,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'redcarpet'
 #Pagination
 gem 'will_paginate', '~> 3.1.0'
+#Tagging
+gem 'acts-as-taggable-on', '~> 4.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

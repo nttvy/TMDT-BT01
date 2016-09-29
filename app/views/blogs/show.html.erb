@@ -58,6 +58,14 @@
                 
                 <hr>
 
+                <% if @blog.tag_list.empty? %>
+                    <small> No tag </small>
+                <% else %>
+                    <small>Tags: <%= @blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe %></small>
+                <% end %>
+
+                <hr>
+
                 <!-- Blog Comments -->
 
                 <!-- Comments Form -->

@@ -43,12 +43,17 @@ class BlogsController < ApplicationController
   end
 
   def search
-    @keywords = params.require(:keywords)
-    @blogs = Blog.where("title like ?", "%#{@keywords}%").page(params[:page]).per_page(5)
+    keywords = params.require(:keywords)
+    @blogs = Blog.where("lower(title) like ?", "%#{keywords.downcase}%").page(params[:page]).per_page(5)
+  end
+
+  def show_blog_tagged
+    @tag = params.require(:tag)
+    @blogs = Blog.tagged_with(@tag).page(params[:page]).per_page(5)
   end
 
   private
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :tag_list)
   end
 end
