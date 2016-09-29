@@ -24,7 +24,7 @@ Danh sách chức năng **phụ**:
 * [ ] Người dùng được phép đăng nhập, đăng xuất
 * [ ] Bảo mật mật khẩu tài khoản người dùng khi đăng ký. Sủ dụng [Bcrypt](https://github.com/codahale/bcrypt-ruby).
 * [ ] Mỗi bài đăng có chứa nhiều tag. Và người dùng có thể tìm kiếm theo tag.
-* [ ] Có thể xem bao nhiêu lượt xem ở mỗi bài đăng.
+* [x] Có thể xem bao nhiêu lượt xem ở mỗi bài đăng.
 
 Danh sách chức năng **thêm** đã làm nhưng chưa được liệt kê ở trên:
 

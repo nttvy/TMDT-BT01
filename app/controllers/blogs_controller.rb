@@ -7,6 +7,10 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @comment = Comment.new
+
+    @blog.record_timestamps = false
+    @blog.update_attributes(:nb_view => @blog.nb_view.to_i + 1)
+    @blog.record_timestamps = true
   end
 
   def create
