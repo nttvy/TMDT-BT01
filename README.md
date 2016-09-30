@@ -6,7 +6,7 @@ Danh sách sinh viên:
 * Nguyễn Thị Tường Vy - 1352019
 * Lưu Thái Ngọc Thạch - 1352014
 
-URL: **Insert your Heroku URL here**
+URL: **https://dry-falls-42265.herokuapp.com/blogs**
 
 ## Chức năng
 
