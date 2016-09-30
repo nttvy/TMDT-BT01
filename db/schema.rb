@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929144450) do
+ActiveRecord::Schema.define(version: 20160930054017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160929144450) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "nb_view"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_blogs_on_user_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -28,7 +30,9 @@ ActiveRecord::Schema.define(version: 20160929144450) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.index ["blog_id"], name: "index_comments_on_blog_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -56,5 +60,16 @@ ActiveRecord::Schema.define(version: 20160929144450) do
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_foreign_key "blogs", "users"
   add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
 end

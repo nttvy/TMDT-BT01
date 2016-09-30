@@ -1,5 +1,6 @@
 class Blog < ApplicationRecord
     after_initialize :set_defaults, unless: :persisted?
+    belongs_to :user
     has_many :comments
 
     acts_as_taggable

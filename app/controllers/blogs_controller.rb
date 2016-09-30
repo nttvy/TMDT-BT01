@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_filter :authorize, only: [:create, :edit, :update, :destroy]
+
   def index
     @blogs = Blog.all.order("created_at DESC").page(params[:page]).per_page(5)
     @blog = Blog.new
@@ -14,7 +16,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.create!(blog_params)
+    @blog = current_user.blogs.create!(blog_params)
 
     flash[:success] = "Blog successfully created!"
     redirect_to blogs_url

@@ -1,4 +1,4 @@
-<% content_for :title, @blog.title %>
+<% content_for :title, @blog.title + " - Bootstrap Blog" %>
 
 <script>
    $('.dropdown-toggle').dropdown()
@@ -29,7 +29,7 @@
 
                 <!-- Author -->
                 <p class="lead">
-                    by Anonymous
+                    by <%= @blog.user.firstname %> <%= @blog.user.lastname %>
                 </p>
 
                 <hr>
@@ -68,16 +68,22 @@
 
                 <!-- Blog Comments -->
 
-                <!-- Comments Form -->
-                <div class="well" style="height: 200px">
-                    <h4>Leave a Comment:</h4>
-                    <%= form_for [@blog, @comment], html: {role: "form"} do |f| %>
-                        <div class="form-group">
-                            <%= f.text_area :content, rows: 3, class: "form-control", required: true %>
-                        </div>
-                        <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
-                    <% end %>
-                </div>
+                <% if current_user %>
+                    <!-- Comments Form -->
+                    <div class="well" style="height: 200px">
+                        <h4>Leave a Comment:</h4>
+                        <%= form_for [@blog, @comment], html: {role: "form"} do |f| %>
+                            <div class="form-group">
+                                <%= f.text_area :content, rows: 3, class: "form-control", required: true %>
+                            </div>
+                            <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
+                        <% end %>
+                    </div>
+                <% else %>
+                    <div class="well">
+                        <h2 style="text-align: center"><%= link_to 'Log in', login_path %> or <%= link_to 'Sign up', signup_path %> to leave a Comment?</h2>
+                    </div>
+                <% end %>
 
                 <% if @blog.comments.count == 1 %>
                     <h2><%= @blog.comments.count %> comment</h2>
@@ -96,7 +102,7 @@
                             <img class="media-object" src="http://placehold.it/64x64" alt="">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading"> Anonymous
+                            <h4 class="media-heading"> <%= comment.user.firstname %> <%= comment.user.lastname %>
                                 <small><%= time_ago_in_words(comment.created_at) %></small>
                             </h4>
                             <%= markdown(comment.content) %>

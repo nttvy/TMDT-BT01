@@ -22,8 +22,8 @@ Danh sách chức năng **phụ**:
 
 * [x] Người dùng có thể xóa các bài đã đăng và có hiện câu hỏi yêu cầu xác nhận lại trước khi xóa.
 * [x] Người dùng có thể tìm kiếm các bài đăng có tiêu đề chứa từ khóa người dùng đã nhập.
-* [ ] Người dùng được phép đăng nhập, đăng xuất
-* [ ] Bảo mật mật khẩu tài khoản người dùng khi đăng ký. Sủ dụng [Bcrypt](https://github.com/codahale/bcrypt-ruby).
+* [x] Người dùng được phép đăng nhập, đăng xuất
+* [x] Bảo mật mật khẩu tài khoản người dùng khi đăng ký. Sủ dụng [Bcrypt](https://github.com/codahale/bcrypt-ruby).
 * [x] Mỗi bài đăng có chứa nhiều tag. Và người dùng có thể tìm kiếm theo tag.
 * [x] Có thể xem bao nhiêu lượt xem ở mỗi bài đăng.
 

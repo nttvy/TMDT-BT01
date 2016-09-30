@@ -36,6 +36,15 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if current_user %>
+                        <li><a style="cursor: default"><span class="glyphicon glyphicon-user"> <%= current_user.firstname %> <%= current_user.lastname %></a></li>
+                        <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Log Out'.html_safe, logout_path %></li>
+                    <% else %>
+                        <li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, signup_path %></li>
+                        <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Log In'.html_safe, login_path %></li>
+                    <% end %>
+				</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
