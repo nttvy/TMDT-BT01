@@ -43,7 +43,7 @@ Danh sách chức năng **phụ** đã làm nhưng không được liệt kê �
 * [x] Thêm thông báo khi tạo hoặc xóa blog thành công (flash message).
 
 Các chuẩn đầu ra cần thực hiện:
-* [ ] Git với Centralize Workflow
+* [x] Git với Centralize Workflow
 * [ ] Git theo Feature Branch Workflow
 * [ ] Git theo Feature Branch Workflow có Pull Request
 * [ ] Git theo Gitflow Workflow
