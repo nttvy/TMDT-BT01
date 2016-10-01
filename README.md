@@ -1,6 +1,6 @@
-# Homework 1 - TMDT-BT01
+# Homework 1 - Isabéry
 
-TMDT-BT01 Đây là trang web cho phép người dùng viết blog. Thời gian nộp: 0h ngày 3/10
+Isabéry là trang web cho phép người dùng viết blog. Thời gian nộp: 0h ngày 3/10
 
 Danh sách sinh viên: 	
 * Nguyễn Thị Tường Vy - 1352019
